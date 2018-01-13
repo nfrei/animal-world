@@ -1,9 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import json
 import random
 
+
 class World:
+
     json_init = """
 {
     "hazards": {
@@ -36,17 +38,19 @@ class World:
 
     def load_world(self):
         try:
-            with open(self.world_path, 'r') as file:
-                json_file = json.loads(file.read())
+            with open(self.world_path, 'r') as f:
+                json_file = json.loads(f.read())
                 self.world_json = json_file
         except IOError:
-            print "Could not read file: ", world_path
+            print "Could not read file: ", self.world_path
+            print "Starting a new world."
+            self.world_json = self.json_init
 
     def save_world(self):
         try:
-            with open(self.world_path, 'w') as file:
+            with open(self.world_path, 'w') as f:
                 world_dump = json.dumps(self.world_json, indent=4)
-                file.write(world_dump)
+                f.write(world_dump)
         except IOError:
             print "Could not save file: ", self.world_path
 
