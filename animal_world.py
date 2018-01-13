@@ -51,6 +51,7 @@ class World:
             with open(self.world_path, 'w') as f:
                 world_dump = json.dumps(self.world_json, indent=4)
                 f.write(world_dump)
+            return True
         except IOError:
             print "Could not save file: ", self.world_path
 
