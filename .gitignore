@@ -1,2 +1,6 @@
+# Python
 *.py[cod]
+# Ninja IDE
 *.nja
+# Don't commit the world output
+world.json
