@@ -1,0 +1,24 @@
+{
+    "hazards": {
+        "hunters": {
+            "mortality_increase": 0.1, 
+            "probability": 0.3
+        }, 
+        "disease": {
+            "mortality_increase": 0.2, 
+            "probability": 0.25
+        }
+    }, 
+    "animals": {
+        "rabbits": {
+            "mortality": 0.4, 
+            "number": 100, 
+            "reproduction": 2.0
+        }, 
+        "foxes": {
+            "mortality": 0.02, 
+            "number": 10, 
+            "reproduction": 1.7
+        }
+    }
+}
