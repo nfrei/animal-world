@@ -65,6 +65,10 @@ class World:
 
         return hazards
 
+    def get_animals(self):
+        """To do."""
+        return True
+
     def one_cycle(self):
         self.load_world()
 
