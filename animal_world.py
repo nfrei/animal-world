@@ -51,6 +51,7 @@ class World:
             with open(self.world_path, 'w') as f:
                 world_dump = json.dumps(self.world_json, indent=4)
                 f.write(world_dump)
+            return True
         except IOError:
             print "Could not save file: ", self.world_path
 
@@ -63,6 +64,10 @@ class World:
             hazards[h] = [mortality_increase, probability]
 
         return hazards
+
+    def get_animals(self):
+        """To do."""
+        return True
 
     def one_cycle(self):
         self.load_world()

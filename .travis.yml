@@ -5,3 +5,4 @@ python:
 
 script:
   - python animal_world.py
+  - python -m unittest tests.test_animal_world
