@@ -7,6 +7,6 @@ install:
   - pip install pycodestyle
 
 script:
-  - find . tests/* -name "*.py" -exec pycodestyle {} +
+  - find . -name "*.py" -exec pycodestyle {} +
   - python animal_world.py
   - python -m unittest tests.test_animal_world
