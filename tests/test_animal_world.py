@@ -40,5 +40,6 @@ class TestAnimalWorld(unittest.TestCase):
         self.animals = self.test_world.get_animals()
         self.assertTrue(self.animals, "Animals not loaded.")
 
+
 if __name__ == '__main__':
     unittest.__main__()
