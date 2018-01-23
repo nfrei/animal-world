@@ -3,6 +3,10 @@ language: python
 python:
   - "2.7"
 
+install:
+  - pip install pycodestyle
+
 script:
+  - find . -name "*.py" -exec pycodestyle {} +
   - python animal_world.py
   - python -m unittest tests.test_animal_world

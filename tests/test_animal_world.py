@@ -22,6 +22,7 @@ class TestAnimalWorld(unittest.TestCase):
 
     def test_save_world(self):
         result = False
+        self.test_world.worl_json = self.test_world.load_world()
         result = self.test_world.save_world()
         self.assertTrue(result, "World could not be saved.")
 
@@ -38,6 +39,7 @@ class TestAnimalWorld(unittest.TestCase):
         self.test_load_world()
         self.animals = self.test_world.get_animals()
         self.assertTrue(self.animals, "Animals not loaded.")
+
 
 if __name__ == '__main__':
     unittest.__main__()

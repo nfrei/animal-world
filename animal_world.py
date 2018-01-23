@@ -56,12 +56,11 @@ class World:
             print "Could not save file: ", self.world_path
 
     def get_hazards(self):
-        hazards = {}
+        hazards = self.world_json['hazards']
 
-        for h in self.world_json['hazards']:
-            probability = self.world_json['hazards'][h]['probability']
-            mortality_increase = self.world_json['hazards'][h]['mortality_increase']
-            hazards[h] = [mortality_increase, probability]
+        for h in hazards:
+            probability = hazards[h]['probability']
+            mortality_increase = hazards[h]['mortality_increase']
 
         return hazards
 
@@ -82,12 +81,13 @@ class World:
 
             for h in hazards:
                 r = random.random()
-                hazard_probability = hazards[h][0]
+                hazard_probability = hazards[h]['probability']
 
                 if hazard_probability <= r:
-                    hazard_mortality = hazards[h][1]
-                    mortality = mortality + hazard_mortality
-                    print "Mortality for %s has increased by %f because of %s." % (a, hazard_mortality, h)
+                    mortality_increase = hazards[h]['mortality_increase']
+                    mortality = mortality + mortality_increase
+                    print "Mortality for %s increases by %f because of %s." \
+                          % (a, mortality_increase, h)
                 else:
                     pass
 
@@ -100,6 +100,7 @@ class World:
             print "New number of %s is %d." % (a, new_number)
 
         return self.save_world()
+
 
 my_world = World()
 my_world.one_cycle()
