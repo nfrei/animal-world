@@ -61,7 +61,6 @@ class World:
         for h in hazards:
             probability = hazards[h]['probability']
             mortality_increase = hazards[h]['mortality_increase']
-#            hazards[h] = [mortality_increase, probability]
 
         return hazards
 
